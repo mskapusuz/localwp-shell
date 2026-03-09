@@ -48,13 +48,15 @@ localwp
 
 1. Walks up from your current directory looking for the LocalWP site root (a directory containing `app/`, `conf/`, and `logs/`)
 2. Reads the `.sh` files in `~/Library/Application Support/Local/ssh-entry/` to find the one whose `cd` path matches your site root
-3. Executes that shell script to enter the LocalWP environment
+3. If no ssh-entry file exists (site never started), automatically generates the shell environment from LocalWP's `sites.json` config
+4. Executes the shell script to enter the LocalWP environment with the correct PHP, MySQL, and WP-CLI versions
 
 ## Requirements
 
-- macOS with zsh (default shell since Catalina)
+- macOS (zsh) or Linux (zsh/bash)
 - [LocalWP](https://localwp.com/) installed
-- At least one site started in LocalWP (generates the ssh-entry files)
+- **macOS**: Zero external dependencies — uses `osascript` (ships with macOS)
+- **Linux**: Requires `node` or `python3` for JSON parsing
 
 ## Uninstall
 
@@ -68,7 +70,13 @@ sed -i '' '/localwp-shell/d' ~/.zshrc
 
 ## Suggested GitHub Topics
 
-`localwp`, `local-by-flywheel`, `wordpress`, `zsh-plugin`, `shell`, `macos`, `developer-tools`, `wp-cli`
+`localwp`, `local-by-flywheel`, `wordpress`, `zsh-plugin`, `shell`, `macos`, `linux`, `developer-tools`, `wp-cli`
+
+## Disclaimer
+
+This project is not affiliated with, endorsed by, or sponsored by WP Engine, Inc. or its subsidiaries. "Local" and "LocalWP" are trademarks of WP Engine, Inc. "WordPress" is a registered trademark of the WordPress Foundation. All other trademarks are the property of their respective owners.
+
+This is an independent, community-built tool that interacts with locally installed Local software through its existing configuration files. It does not modify, redistribute, or reverse-engineer any part of Local.
 
 ## License
 
