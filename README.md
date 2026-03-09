@@ -78,6 +78,8 @@ This project is not affiliated with, endorsed by, or sponsored by WP Engine, Inc
 
 This is an independent, community-built tool that interacts with locally installed Local software through its existing configuration files. It does not modify, redistribute, or reverse-engineer any part of Local.
 
+This software is provided "as is", without warranty of any kind, express or implied. The author(s) shall not be liable for any claim, damages, or other liability arising from the use of this software. Use at your own risk. Always review scripts before running them on your machine.
+
 ## License
 
 MIT
